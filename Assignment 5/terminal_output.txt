@@ -1,0 +1,341 @@
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ g++ gen_input.cpp 
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ ./a.out 128 inputfile.txt 
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ g++ template.cpp 
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ perf stat -r 8 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-loads,L1-dcache-stores,L1-icache-load-misses,LLC-load-misses,LLC-loads,LLC-store-misses,LLC-stores ./a.out 0 inputfile.txt outputfile.txt 
+
+ Performance counter stats for './a.out 0 inputfile.txt outputfile.txt' (8 runs):
+
+            58,689      cache-misses              #   30.017 % of all cache refs      ( +- 54.72% )  (18.73%)
+          1,95,518      cache-references                                              ( +-  7.05% )  (66.18%)
+         21,55,370      L1-dcache-load-misses     #    4.43% of all L1-dcache accesses  ( +-  1.35% )  (99.46%)
+       4,86,72,059      L1-dcache-loads                                               ( +-  0.02% )
+         80,25,210      L1-dcache-stores                                              ( +-  2.27% )  (81.27%)
+          3,07,996      L1-icache-load-misses                                         ( +- 21.94% )  (33.82%)
+               318      LLC-load-misses           #    0.00% of all LL-cache accesses  ( +- 85.23% )  (0.54%)
+     <not counted>      LLC-loads                                                     (0.00%)
+     <not counted>      LLC-store-misses                                              (0.00%)
+     <not counted>      LLC-stores                                                    (0.00%)
+
+         0.0085728 +- 0.0000672 seconds time elapsed  ( +-  0.78% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ perf stat -r 8 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-loads,L1-dcache-stores,L1-icache-load-misses,LLC-load-misses,LLC-loads,LLC-store-misses,LLC-stores ./a.out 4 inputfile.txt outputfile.txt 
+
+ Performance counter stats for './a.out 4 inputfile.txt outputfile.txt' (8 runs):
+
+            42,833      cache-misses              #   21.529 % of all cache refs      ( +- 34.65% )  (19.88%)
+          1,98,958      cache-references                                              ( +-  7.30% )  (64.29%)
+          1,86,548      L1-dcache-load-misses     #    0.33% of all L1-dcache accesses  ( +-  0.49% )  (97.89%)
+       5,61,88,622      L1-dcache-loads                                               ( +-  0.00% )
+         93,68,908      L1-dcache-stores                                              ( +-  1.38% )  (80.12%)
+          2,61,663      L1-icache-load-misses                                         ( +- 12.88% )  (35.71%)
+     <not counted>      LLC-load-misses                                               ( +- 79.04% )  (2.11%)
+     <not counted>      LLC-loads                                                     (0.00%)
+     <not counted>      LLC-store-misses                                              (0.00%)
+     <not counted>      LLC-stores                                                    (0.00%)
+
+          0.009145 +- 0.000121 seconds time elapsed  ( +-  1.32% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ perf stat -r 8 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-loads,L1-dcache-stores,L1-icache-load-misses,LLC-load-misses,LLC-loads,LLC-store-misses,LLC-stores ./a.out 8 inputfile.txt outputfile.txt 
+
+ Performance counter stats for './a.out 8 inputfile.txt outputfile.txt' (8 runs):
+
+            51,650      cache-misses              #   28.606 % of all cache refs      ( +- 67.18% )  (25.91%)
+          1,80,558      cache-references                                              ( +-  7.28% )  (73.05%)
+          1,00,565      L1-dcache-load-misses     #    0.19% of all L1-dcache accesses  ( +-  2.99% )  (99.93%)
+       5,30,77,639      L1-dcache-loads                                               ( +-  0.00% )
+         86,79,772      L1-dcache-stores                                              ( +-  1.61% )  (74.09%)
+          4,10,344      L1-icache-load-misses                                         ( +- 20.90% )  (26.95%)
+     <not counted>      LLC-load-misses                                               (0.07%)
+     <not counted>      LLC-loads                                                     (0.00%)
+     <not counted>      LLC-store-misses                                              (0.00%)
+     <not counted>      LLC-stores                                                    (0.00%)
+
+         0.0086301 +- 0.0000797 seconds time elapsed  ( +-  0.92% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ perf stat -r 8 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-loads,L1-dcache-stores,L1-icache-load-misses,LLC-load-misses,LLC-loads,LLC-store-misses,LLC-stores ./a.out 16 inputfile.txt outputfile.txt 
+
+ Performance counter stats for './a.out 16 inputfile.txt outputfile.txt' (8 runs):
+
+            66,966      cache-misses              #   33.955 % of all cache refs      ( +- 47.51% )  (20.41%)
+          1,97,219      cache-references                                              ( +-  5.65% )  (68.24%)
+            85,262      L1-dcache-load-misses     #    0.16% of all L1-dcache accesses  ( +-  3.30% )
+       5,17,99,811      L1-dcache-loads                                               ( +-  0.00% )
+         83,07,071      L1-dcache-stores                                              ( +-  2.22% )  (79.59%)
+          3,16,519      L1-icache-load-misses                                         ( +- 20.16% )  (31.76%)
+     <not counted>      LLC-load-misses                                               (0.00%)
+     <not counted>      LLC-loads                                                     (0.00%)
+     <not counted>      LLC-store-misses                                              (0.00%)
+     <not counted>      LLC-stores                                                    (0.00%)
+
+          0.008524 +- 0.000110 seconds time elapsed  ( +-  1.29% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ perf stat -r 8 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-loads,L1-dcache-stores,L1-icache-load-misses,LLC-load-misses,LLC-loads,LLC-store-misses,LLC-stores ./a.out 32 inputfile.txt outputfile.txt 
+
+ Performance counter stats for './a.out 32 inputfile.txt outputfile.txt' (8 runs):
+
+            56,112      cache-misses              #   28.254 % of all cache refs      ( +- 42.80% )  (21.37%)
+          1,98,599      cache-references                                              ( +-  6.85% )  (69.11%)
+            83,575      L1-dcache-load-misses     #    0.16% of all L1-dcache accesses  ( +-  1.70% )  (99.33%)
+       5,12,18,394      L1-dcache-loads                                               ( +-  0.00% )
+         79,23,726      L1-dcache-stores                                              ( +-  1.64% )  (78.63%)
+          3,25,820      L1-icache-load-misses                                         ( +- 15.61% )  (30.89%)
+     <not counted>      LLC-load-misses                                               ( +-100.00% )  (0.67%)
+     <not counted>      LLC-loads                                                     (0.00%)
+     <not counted>      LLC-store-misses                                              (0.00%)
+     <not counted>      LLC-stores                                                    (0.00%)
+
+         0.0085471 +- 0.0000980 seconds time elapsed  ( +-  1.15% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ perf stat -r 8 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-loads,L1-dcache-stores,L1-icache-load-misses,LLC-load-misses,LLC-loads,LLC-store-misses,LLC-stores ./a.out 64 inputfile.txt outputfile.txt 
+
+ Performance counter stats for './a.out 64 inputfile.txt outputfile.txt' (8 runs):
+
+            89,941      cache-misses              #   41.833 % of all cache refs      ( +- 52.03% )  (20.46%)
+          2,15,002      cache-references                                              ( +-  8.24% )  (67.69%)
+          3,99,334      L1-dcache-load-misses     #    0.78% of all L1-dcache accesses  ( +-  3.48% )  (99.50%)
+       5,09,46,732      L1-dcache-loads                                               ( +-  0.00% )
+         81,01,450      L1-dcache-stores                                              ( +-  2.05% )  (79.54%)
+          3,41,295      L1-icache-load-misses                                         ( +- 23.74% )  (32.31%)
+     <not counted>      LLC-load-misses                                               ( +- 88.32% )  (0.50%)
+     <not counted>      LLC-loads                                                     (0.00%)
+     <not counted>      LLC-store-misses                                              (0.00%)
+     <not counted>      LLC-stores                                                    (0.00%)
+
+         0.0086090 +- 0.0000858 seconds time elapsed  ( +-  1.00% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ g++ gen_input.cpp 
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ ./a.out 256 inputfile.txt 
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ g++ template.cpp 
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ perf stat -r 8 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-loads,L1-dcache-stores,L1-icache-load-misses,LLC-load-misses,LLC-loads,LLC-store-misses,LLC-stores ./a.out 0 inputfile.txt outputfile.txt 
+
+ Performance counter stats for './a.out 0 inputfile.txt outputfile.txt' (8 runs):
+
+          1,15,680      cache-misses              #    0.389 % of all cache refs      ( +- 18.27% )  (20.51%)
+       2,97,57,967      cache-references                                              ( +-  4.95% )  (32.03%)
+       1,59,00,096      L1-dcache-load-misses     #    4.56% of all L1-dcache accesses  ( +-  1.31% )  (37.47%)
+      34,86,53,939      L1-dcache-loads                                               ( +-  0.25% )  (43.28%)
+       4,78,70,891      L1-dcache-stores                                              ( +-  2.85% )  (46.41%)
+            13,225      L1-icache-load-misses                                         ( +- 13.48% )  (46.52%)
+               148      LLC-load-misses           #    0.00% of all LL-cache accesses  ( +- 46.29% )  (46.32%)
+         78,17,733      LLC-loads                                                     ( +-  8.45% )  (44.71%)
+            16,913      LLC-store-misses                                              ( +- 29.12% )  (16.22%)
+             8,017      LLC-stores                                                    ( +- 36.80% )  (12.01%)
+
+          0.069030 +- 0.000446 seconds time elapsed  ( +-  0.65% )
+
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ perf stat -r 8 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-loads,L1-dcache-stores,L1-icache-load-misses,LLC-load-misses,LLC-loads,LLC-store-misses,LLC-stores ./a.out 4 inputfile.txt outputfile.txt 
+
+ Performance counter stats for './a.out 4 inputfile.txt outputfile.txt' (8 runs):
+
+          1,18,507      cache-misses              #    5.112 % of all cache refs      ( +- 21.41% )  (24.38%)
+         23,18,023      cache-references                                              ( +-  6.34% )  (37.63%)
+         11,78,658      L1-dcache-load-misses     #    0.29% of all L1-dcache accesses  ( +-  0.65% )  (43.20%)
+      40,24,79,679      L1-dcache-loads                                               ( +-  1.35% )  (48.66%)
+       6,17,62,511      L1-dcache-stores                                              ( +-  1.61% )  (50.84%)
+          3,17,885      L1-icache-load-misses                                         ( +- 13.10% )  (47.56%)
+             1,176      LLC-load-misses           #    0.23% of all LL-cache accesses  ( +- 55.01% )  (42.74%)
+          5,19,308      LLC-loads                                                     ( +-  6.14% )  (37.28%)
+                 5      LLC-store-misses                                              ( +- 67.01% )  (14.06%)
+               748      LLC-stores                                                    ( +- 13.09% )  (14.06%)
+
+            0.0759 +- 0.0117 seconds time elapsed  ( +- 15.48% )
+
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ perf stat -r 8 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-loads,L1-dcache-stores,L1-icache-load-misses,LLC-load-misses,LLC-loads,LLC-store-misses,LLC-stores ./a.out 8 inputfile.txt outputfile.txt 
+
+ Performance counter stats for './a.out 8 inputfile.txt outputfile.txt' (8 runs):
+
+            80,955      cache-misses              #    7.465 % of all cache refs      ( +- 25.21% )  (25.22%)
+         10,84,441      cache-references                                              ( +-  3.91% )  (39.76%)
+          4,78,142      L1-dcache-load-misses     #    0.13% of all L1-dcache accesses  ( +-  5.09% )  (47.04%)
+      37,25,63,672      L1-dcache-loads                                               ( +-  0.52% )  (54.17%)
+       5,98,86,066      L1-dcache-stores                                              ( +-  1.25% )  (52.96%)
+          4,11,734      L1-icache-load-misses                                         ( +-  2.68% )  (45.69%)
+               877      LLC-load-misses           #    0.52% of all LL-cache accesses  ( +- 41.11% )  (38.42%)
+          1,67,254      LLC-loads                                                     ( +-  3.61% )  (31.28%)
+                 4      LLC-store-misses                                              ( +-100.00% )  (14.55%)
+               612      LLC-stores                                                    ( +- 13.49% )  (14.55%)
+
+          0.055163 +- 0.000316 seconds time elapsed  ( +-  0.57% )
+
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ perf stat -r 8 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-loads,L1-dcache-stores,L1-icache-load-misses,LLC-load-misses,LLC-loads,LLC-store-misses,LLC-stores ./a.out 16 inputfile.txt outputfile.txt 
+
+ Performance counter stats for './a.out 16 inputfile.txt outputfile.txt' (8 runs):
+
+          1,09,994      cache-misses              #   14.352 % of all cache refs      ( +- 20.99% )  (24.83%)
+          7,66,427      cache-references                                              ( +-  0.85% )  (39.31%)
+          4,61,623      L1-dcache-load-misses     #    0.13% of all L1-dcache accesses  ( +-  1.30% )  (46.54%)
+      36,42,87,031      L1-dcache-loads                                               ( +-  0.62% )  (53.36%)
+       5,75,65,762      L1-dcache-stores                                              ( +-  1.36% )  (53.29%)
+          4,31,633      L1-icache-load-misses                                         ( +-  1.96% )  (46.22%)
+               990      LLC-load-misses           #    1.73% of all LL-cache accesses  ( +- 29.99% )  (38.98%)
+            57,180      LLC-loads                                                     ( +-  3.53% )  (32.16%)
+                 8      LLC-store-misses                                              ( +- 80.16% )  (14.48%)
+               612      LLC-stores                                                    ( +- 12.67% )  (14.48%)
+
+           0.06079 +- 0.00592 seconds time elapsed  ( +-  9.74% )
+
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ perf stat -r 8 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-loads,L1-dcache-stores,L1-icache-load-misses,LLC-load-misses,LLC-loads,LLC-store-misses,LLC-stores ./a.out 32 inputfile.txt outputfile.txt 
+
+ Performance counter stats for './a.out 32 inputfile.txt outputfile.txt' (8 runs):
+
+            89,003      cache-misses              #   10.864 % of all cache refs      ( +- 22.11% )  (25.51%)
+          8,19,260      cache-references                                              ( +-  2.41% )  (40.00%)
+         32,61,743      L1-dcache-load-misses     #    0.91% of all L1-dcache accesses  ( +-  7.07% )  (47.25%)
+      36,01,53,918      L1-dcache-loads                                               ( +-  0.51% )  (54.16%)
+       5,59,34,170      L1-dcache-stores                                              ( +-  1.46% )  (52.75%)
+          4,23,145      L1-icache-load-misses                                         ( +-  2.14% )  (45.50%)
+               749      LLC-load-misses           #    2.29% of all LL-cache accesses  ( +- 36.57% )  (38.25%)
+            32,736      LLC-loads                                                     ( +-  5.13% )  (31.34%)
+                 3      LLC-store-misses                                              ( +- 55.70% )  (14.50%)
+               537      LLC-stores                                                    ( +- 12.92% )  (14.50%)
+
+          0.055366 +- 0.000392 seconds time elapsed  ( +-  0.71% )
+
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ perf stat -r 8 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-loads,L1-dcache-stores,L1-icache-load-misses,LLC-load-misses,LLC-loads,LLC-store-misses,LLC-stores ./a.out 64 inputfile.txt outputfile.txt 
+
+ Performance counter stats for './a.out 64 inputfile.txt outputfile.txt' (8 runs):
+
+            66,634      cache-misses              #    6.725 % of all cache refs      ( +- 31.78% )  (23.74%)
+          9,90,884      cache-references                                              ( +- 22.58% )  (38.06%)
+       1,57,62,228      L1-dcache-load-misses     #    4.33% of all L1-dcache accesses  ( +-  1.48% )  (45.21%)
+      36,36,21,853      L1-dcache-loads                                               ( +-  0.52% )  (52.03%)
+       5,67,94,334      L1-dcache-stores                                              ( +-  1.53% )  (54.70%)
+          3,82,885      L1-icache-load-misses                                         ( +-  2.68% )  (47.62%)
+               525      LLC-load-misses           #    0.39% of all LL-cache accesses  ( +- 36.33% )  (40.48%)
+          1,35,634      LLC-loads                                                     ( +- 61.52% )  (33.64%)
+                 2      LLC-store-misses                                              ( +-100.00% )  (14.32%)
+               571      LLC-stores                                                    ( +-  7.01% )  (14.32%)
+
+          0.056020 +- 0.000401 seconds time elapsed  ( +-  0.72% )
+
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ g++ gen_input.cpp 
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ ./a.out 512 inputfile.txt 
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ g++ template.cpp 
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ perf stat -r 8 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-loads,L1-dcache-stores,L1-icache-load-misses,LLC-load-misses,LLC-loads,LLC-store-misses,LLC-stores ./a.out 0 inputfile.txt outputfile.txt 
+
+ Performance counter stats for './a.out 0 inputfile.txt outputfile.txt' (8 runs):
+
+          4,13,693      cache-misses              #    0.073 % of all cache refs      ( +-  6.40% )  (29.60%)
+      56,74,84,586      cache-references                                              ( +-  0.31% )  (39.92%)
+      13,28,31,216      L1-dcache-load-misses     #    4.97% of all L1-dcache accesses  ( +-  0.77% )  (40.42%)
+    2,67,08,29,600      L1-dcache-loads                                               ( +-  0.16% )  (40.82%)
+      36,45,31,492      L1-dcache-stores                                              ( +-  0.83% )  (40.67%)
+          7,11,275      L1-icache-load-misses                                         ( +- 20.68% )  (40.43%)
+            11,596      LLC-load-misses           #    0.01% of all LL-cache accesses  ( +- 10.90% )  (40.16%)
+      13,67,72,191      LLC-loads                                                     ( +-  0.67% )  (39.81%)
+             3,416      LLC-store-misses                                              ( +- 98.75% )  (19.41%)
+            18,585      LLC-stores                                                    ( +- 36.03% )  (19.37%)
+
+           0.64999 +- 0.00918 seconds time elapsed  ( +-  1.41% )
+
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ perf stat -r 8 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-loads,L1-dcache-stores,L1-icache-load-misses,LLC-load-misses,LLC-loads,LLC-store-misses,LLC-stores ./a.out 4 inputfile.txt outputfile.txt 
+
+ Performance counter stats for './a.out 4 inputfile.txt outputfile.txt' (8 runs):
+
+          4,36,642      cache-misses              #    1.200 % of all cache refs      ( +- 13.64% )  (29.83%)
+       3,63,90,960      cache-references                                              ( +-  1.02% )  (39.91%)
+         89,98,476      L1-dcache-load-misses     #    0.29% of all L1-dcache accesses  ( +-  0.24% )  (40.14%)
+    3,11,00,23,247      L1-dcache-loads                                               ( +-  0.26% )  (40.39%)
+      43,86,84,441      L1-dcache-stores                                              ( +-  1.53% )  (40.35%)
+          2,73,861      L1-icache-load-misses                                         ( +- 48.28% )  (40.21%)
+             9,888      LLC-load-misses           #    0.11% of all LL-cache accesses  ( +- 12.98% )  (39.98%)
+         90,07,944      LLC-loads                                                     ( +-  0.32% )  (39.78%)
+            46,778      LLC-store-misses                                              ( +- 24.64% )  (19.88%)
+            90,724      LLC-stores                                                    ( +- 20.81% )  (19.83%)
+
+           0.44614 +- 0.00204 seconds time elapsed  ( +-  0.46% )
+
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ perf stat -r 8 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-loads,L1-dcache-stores,L1-icache-load-misses,LLC-load-misses,LLC-loads,LLC-store-misses,LLC-stores ./a.out 8 inputfile.txt outputfile.txt 
+
+ Performance counter stats for './a.out 8 inputfile.txt outputfile.txt' (8 runs):
+
+          4,19,514      cache-misses              #    3.451 % of all cache refs      ( +- 13.56% )  (29.78%)
+       1,21,55,628      cache-references                                              ( +-  3.63% )  (40.11%)
+         55,83,040      L1-dcache-load-misses     #    0.19% of all L1-dcache accesses  ( +-  5.63% )  (40.45%)
+    2,90,15,26,102      L1-dcache-loads                                               ( +-  0.23% )  (40.81%)
+      37,98,75,779      L1-dcache-stores                                              ( +-  1.65% )  (40.63%)
+          3,92,580      L1-icache-load-misses                                         ( +- 47.68% )  (40.17%)
+             8,806      LLC-load-misses           #    0.35% of all LL-cache accesses  ( +- 15.79% )  (39.92%)
+         25,43,700      LLC-loads                                                     ( +-  2.40% )  (39.68%)
+            23,238      LLC-store-misses                                              ( +- 37.11% )  (19.63%)
+            64,195      LLC-stores                                                    ( +- 26.36% )  (19.51%)
+
+           0.41850 +- 0.00767 seconds time elapsed  ( +-  1.83% )
+
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ perf stat -r 8 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-loads,L1-dcache-stores,L1-icache-load-misses,LLC-load-misses,LLC-loads,LLC-store-misses,LLC-stores ./a.out 16 inputfile.txt outputfile.txt 
+
+ Performance counter stats for './a.out 16 inputfile.txt outputfile.txt' (8 runs):
+
+          2,43,635      cache-misses              #    1.152 % of all cache refs      ( +- 19.80% )  (29.41%)
+       2,11,57,968      cache-references                                              ( +-  1.43% )  (39.73%)
+       4,02,33,488      L1-dcache-load-misses     #    1.43% of all L1-dcache accesses  ( +-  2.36% )  (40.69%)
+    2,81,29,50,177      L1-dcache-loads                                               ( +-  0.41% )  (41.61%)
+      39,12,92,899      L1-dcache-stores                                              ( +-  1.57% )  (41.48%)
+          9,78,098      L1-icache-load-misses                                         ( +-  5.43% )  (40.91%)
+            15,204      LLC-load-misses           #    1.88% of all LL-cache accesses  ( +-  6.70% )  (40.04%)
+          8,08,939      LLC-loads                                                     ( +-  3.83% )  (39.13%)
+               100      LLC-store-misses                                              ( +- 63.70% )  (19.26%)
+             5,066      LLC-stores                                                    ( +-  7.02% )  (19.26%)
+
+           0.41809 +- 0.00179 seconds time elapsed  ( +-  0.43% )
+
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ perf stat -r 8 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-loads,L1-dcache-stores,L1-icache-load-misses,LLC-load-misses,LLC-loads,LLC-store-misses,LLC-stores ./a.out 32 inputfile.txt outputfile.txt 
+
+ Performance counter stats for './a.out 32 inputfile.txt outputfile.txt' (8 runs):
+
+          3,70,614      cache-misses              #    2.225 % of all cache refs      ( +- 11.07% )  (29.18%)
+       1,66,54,505      cache-references                                              ( +-  5.55% )  (39.31%)
+      12,61,67,610      L1-dcache-load-misses     #    4.48% of all L1-dcache accesses  ( +-  0.69% )  (39.78%)
+    2,81,79,86,947      L1-dcache-loads                                               ( +-  0.16% )  (40.48%)
+      35,46,63,886      L1-dcache-stores                                              ( +-  2.28% )  (40.82%)
+          5,08,268      L1-icache-load-misses                                         ( +- 36.08% )  (40.84%)
+            10,168      LLC-load-misses           #    0.68% of all LL-cache accesses  ( +- 12.38% )  (40.60%)
+         14,86,525      LLC-loads                                                     ( +- 21.77% )  (40.23%)
+            44,229      LLC-store-misses                                              ( +- 34.42% )  (19.62%)
+            50,556      LLC-stores                                                    ( +- 35.78% )  (19.29%)
+
+           0.43330 +- 0.00233 seconds time elapsed  ( +-  0.54% )
+
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ perf stat -r 8 -e cache-misses,cache-references,L1-dcache-load-misses,L1-dcache-loads,L1-dcache-stores,L1-icache-load-misses,LLC-load-misses,LLC-loads,LLC-store-misses,LLC-stores ./a.out 64 inputfile.txt outputfile.txt 
+
+ Performance counter stats for './a.out 64 inputfile.txt outputfile.txt' (8 runs):
+
+          3,66,016      cache-misses              #    1.885 % of all cache refs      ( +- 12.11% )  (29.61%)
+       1,94,19,816      cache-references                                              ( +-  8.68% )  (40.15%)
+      12,67,01,121      L1-dcache-load-misses     #    4.57% of all L1-dcache accesses  ( +-  1.24% )  (40.74%)
+    2,77,10,44,535      L1-dcache-loads                                               ( +-  0.15% )  (41.18%)
+      36,62,76,647      L1-dcache-stores                                              ( +-  2.35% )  (40.95%)
+          5,43,849      L1-icache-load-misses                                         ( +- 28.02% )  (40.23%)
+             9,276      LLC-load-misses           #    0.13% of all LL-cache accesses  ( +- 13.90% )  (39.73%)
+         70,69,330      LLC-loads                                                     ( +- 10.94% )  (39.41%)
+             6,694      LLC-store-misses                                              ( +- 91.65% )  (19.52%)
+            21,437      LLC-stores                                                    ( +- 38.99% )  (19.41%)
+
+           0.46662 +- 0.00948 seconds time elapsed  ( +-  2.03% )
+
+balakrishnan@balakrishnan-Lenovo-Legion-5-15IMH05:~/Personal/CS2610/CS20B012_A5$ 
+
