@@ -6,3 +6,5 @@ and <executable> is the executable for the C program, such as ./a.out
 In case isolcpus was not used, the executable may be run directly.
 
 The output is printed to the terminal. The program to find cache block size also writes to a file in order to make a plot using python, but these lines (9, 76, 78) may be commented out if not wanted.
+
+This was a team assignment and was done by <a href="https://github.com/chathur018">Chathur B</a> and myself.
