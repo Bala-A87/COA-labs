@@ -9,3 +9,5 @@ The following are the assignments done as part of the lab:
 6. Implementing a hybrid/adaptive DRAM row buffer management policy in a high-level language with the help of <a href="https://www.cs.utah.edu/~rajeev/jwac12/">USIMM simulator</a>
 7. An assembly program using system calls for file access and modification, as well as mmap and fork
 8. Implement a simple scalar pipelined processor in a high-level language
+
+Assignments 4, 6, 7, 8 were team assignments and were done by <a href="https://github.com/chathur018">Chathur B</a> and myself.
